@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Approach
+1. Initial Setup:
+    - Began by establishing all global styles, helpers, and utilities.
+    - Created a rudimentary test case to ensure everything was set up correctly.
+2. Page Layouts:
+    - Developed a base layout for each page.
+3. Component Development:
+    - Planned to build each page by creating the necessary components and completing the entire page.
+4. Form Implementation:
+    - Focused on the main form, ensuring validations were functional.
+    - Added unstyled inputs, labels, and error messages.
+    - Prioritized getting the form to work completely before styling components to match the Figma design.
+5. Progress:
+    - Did not fully complete the form section.
+6. Testing:
+    - Planned to revisit all pages and components to thoroughly test them after completing the initial build.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started 
+
+### `npm install`
 
 ## Available Scripts
 
