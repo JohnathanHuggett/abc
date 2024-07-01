@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik";
 import * as Yup from "yup";
 import InputMask from "react-input-mask";
 
-import { BasePageLayout } from "../../components";
+import { BasePageLayout, Button } from "../../components";
 
 import "./Pay.styles.scss";
 import { PaymentSteps } from "../../components/control/PaymentSteps";
@@ -43,7 +43,6 @@ const validationSchema = Yup.object({
 
       // Add 2000 to year to handle 'yy' format correctly, assuming dates are from 2000 to 2099
       const fullYear = 2000 + year;
-      const expiration = new Date(fullYear, month - 1);
 
       // Compare year and month for future date validation
       return fullYear > today.getFullYear() || (fullYear === today.getFullYear() && month > today.getMonth() + 1);
@@ -58,7 +57,21 @@ const validationSchema = Yup.object({
 });
 
 export const Pay: React.FC = () => {
-  const [formValues, setFormValues] = React.useState({});
+  // const [formValues, setFormValues] = React.useState<{
+  //   creditCardNumber: string;
+  //   expirationDate: string;
+  //   securityCode: string;
+  //   name: string;
+  //   zipcode: string;
+  // }>({
+  //   creditCardNumber: "",
+  //   expirationDate: "",
+  //   securityCode: "",
+  //   name: "",
+  //   zipcode: "",
+  // });
+  const [isExpanded, setExpanded] = React.useState<boolean>(true);
+
   const maskCreditCard = (creditCardNumber: string) => {
     if (creditCardNumber.length < 4) {
       return creditCardNumber;
@@ -71,7 +84,7 @@ export const Pay: React.FC = () => {
   return (
     <BasePageLayout>
       <div className="pay">
-        <PaymentSteps>
+        <PaymentSteps isExpanded={isExpanded} setExpanded={() => setExpanded(true)}>
           <Formik
             initialValues={{
               creditCardNumber: "",
@@ -79,21 +92,22 @@ export const Pay: React.FC = () => {
               securityCode: "",
               name: "",
               zipcode: "",
+              maskCreditCard: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log("Form submitted with values:", values);
+            onSubmit={(values, formikHelpers) => {
+              console.log("Form submitted with values:", values, formikHelpers);
 
-              const dataToSave = {
+              const dataToSave: any = {
                 ...values,
                 maskCreditCard: maskCreditCard(values.creditCardNumber),
               };
 
-              setFormValues(dataToSave);
+              setExpanded(false);
             }}
           >
-            {({ handleSubmit, touched, errors }) => (
-              <Form onSubmit={handleSubmit}>
+            {({ touched, errors }) => (
+              <Form>
                 <div>
                   <label htmlFor="creditCardNumber">Credit Card Number</label>
                   <Field name="creditCardNumber">
@@ -101,6 +115,7 @@ export const Pay: React.FC = () => {
                       <div>
                         <InputMask
                           {...field}
+                          value={field.value}
                           mask="9999 9999 9999 9999"
                           maskChar="_"
                           placeholder="Enter your credit card number"
@@ -150,7 +165,7 @@ export const Pay: React.FC = () => {
                   <ErrorMessage name="zipcode" component="div" />
                 </div>
 
-                <button type="submit">Submit</button>
+                <Button type="submit">Continue</Button>
               </Form>
             )}
           </Formik>

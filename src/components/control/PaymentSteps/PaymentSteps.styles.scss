@@ -5,12 +5,12 @@
   flex-direction: column;
   padding: spacing(5x) spacing(8x);
   border-bottom: 1px solid color(gray);
+  row-gap: spacing(5x);
 
   &-headline {
     display: flex;
     align-items: center;
     column-gap: spacing(4x);
-    margin-bottom: spacing(5x);
   }
 
   &-indicator {
@@ -34,5 +34,8 @@
   &-edit {
     color: color(link);
     @include applyTypography(bodyRegular, bold, body, small);
+  }
+
+  &-content {
   }
 }
