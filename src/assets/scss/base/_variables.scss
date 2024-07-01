@@ -1,0 +1,68 @@
+$size-map: (
+  "1x": "0.4rem",
+  "2x": "0.8rem",
+  "3x": "1.2rem",
+  "4x": "1.6rem",
+  "5x": "2.0rem",
+  "6x": "2.4rem",
+  "7x": "2.8rem",
+  "8x": "3.2rem",
+  "9x": "3.6rem",
+  "10x": "4.0rem",
+  "11x": "4.4rem",
+  "12x": "4.8rem",
+  borderRadiusSmall: "2x",
+  borderRadiusMedium: "3x",
+  borderRadiusLarge: "4x",
+  borderRadiusXL: "8x",
+);
+
+$color-map: (
+  primary: #3667e9,
+  primary10: #f2f8ff,
+  error: #c34648,
+  displayFont: #13126c,
+  formLabel: #65657b,
+  success: #227c6c,
+  link: #3667e9,
+  gray: #e7e9ef,
+  inputBorder: #6d7088,
+  white: #fff,
+  black: #171731,
+);
+
+$font-size-map: (
+  heroLarge: 28px,
+  heroMedium: 20px,
+  bodyRegular: 16px,
+  bodyRegularBold: 16px,
+  bodySmallBold: 14px,
+  bodySmall: 14px,
+);
+
+$line-height-map: (
+  heroLarge: 36px,
+  heroMedium: 24px,
+  bodyRegular: 24px,
+  bodyRegularBold: 24px,
+  bodySmallBold: 20px,
+  bodySmall: 20px,
+);
+
+$fontWeight-map: (
+  bold: 700,
+  normal: 400,
+);
+
+$fontFamily-map: (
+  heading: Georgia,
+  body: Arial,
+);
+
+$letter-spacing-map: (
+  small: 0.2px,
+);
+
+//  media queries
+$tablet: 78.6em; // 1080px
+$desktop: 108em; // 1920px

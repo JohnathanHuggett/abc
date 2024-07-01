@@ -1,0 +1,4 @@
+body {
+  @include applyTypography(bodyRegular, normal, body, null);
+  background-color: color(primary10);
+}

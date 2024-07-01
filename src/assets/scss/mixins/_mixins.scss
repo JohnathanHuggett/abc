@@ -1,0 +1,35 @@
+@import "../base/variables";
+
+@mixin font-size($name) {
+  font-size: map-get($font-size-map, $name);
+}
+
+@mixin line-height($name) {
+  line-height: map-get($line-height-map, $name);
+}
+
+@mixin font-weight($weight) {
+  font-weight: map-get($fontWeight-map, $weight);
+}
+
+@mixin font-family($family) {
+  font-family: map-get($fontFamily-map, $family);
+}
+
+@mixin letter-spacing($spacing) {
+  $value: map-get($letter-spacing-map, $spacing);
+  @if $value {
+    letter-spacing: $value;
+  }
+}
+
+@mixin applyTypography($name, $weight, $family, $spacing: null) {
+  @include font-size($name);
+  @include line-height($name);
+  @include font-weight($weight);
+  @include font-family($family);
+
+  @if $spacing {
+    @include letter-spacing($spacing);
+  }
+}

@@ -1,0 +1,27 @@
+// General lookup function to handle one level of indirection
+@function lookup($map, $key) {
+  $value: map-get($map, $key);
+
+  // Check if the value itself is another key, and resolve once
+  @if type-of($value) == "string" {
+    $resolvedValue: map-get($map, $value);
+    @if type-of($resolvedValue) == "string" {
+      @warn "Nested indirection beyond one level is not supported.";
+      @return $resolvedValue;
+    } @else {
+      @return $resolvedValue;
+    }
+  } @else {
+    @return $value;
+  }
+}
+
+// Spacing function
+@function spacing($key) {
+  @return lookup($spacing-map, $key);
+}
+
+// Color function
+@function color($key) {
+  @return lookup($color-map, $key);
+}
