@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../assets/icons/abc-logo.svg";
+import { BasePageLayout } from "../components/layout";
 
 export const Pay: React.FC = () => {
   return (
-    <>
+    <BasePageLayout>
       <h1>Pay Page</h1>
-
-      <Link to="/">
-        <Logo />
-      </Link>
-    </>
+    </BasePageLayout>
   );
 };

@@ -2,3 +2,18 @@ body {
   @include applyTypography(bodyRegular, normal, body, null);
   background-color: color(primary10);
 }
+
+a {
+  cursor: pointer;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: -999px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  white-space: nowrap;
+}

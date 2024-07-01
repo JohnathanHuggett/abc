@@ -1,0 +1,16 @@
+@import "../../../assets/scss/global.scss";
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: color(black);
+  color: color(white);
+  padding: spacing(2x) spacing(4x);
+  z-index: 100;
+  transition: top 0.3s;
+
+  &:focus {
+    top: 0;
+  }
+}

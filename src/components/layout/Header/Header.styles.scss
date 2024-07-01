@@ -1,0 +1,9 @@
+@import "../../../assets/scss/global.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid color(gray);
+  background-color: color(white);
+  padding: spacing(5x) spacing(4x);
+}
