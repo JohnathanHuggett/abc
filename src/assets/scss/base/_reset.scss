@@ -314,7 +314,11 @@ textarea {
 button {
   overflow: visible;
 }
-
+button {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
 /**
   * Address inconsistent 'text-transform' inheritance for 'button' and 'select'.
   * All other form control elements do not inherit 'text-transform' values.

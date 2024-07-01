@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./assets/scss/global.scss";
 
 import { HomePage } from "./pages/Home/Home";
-import { Pay } from "./pages/Pay";
+import { Pay } from "./pages/Pay/Pay";
 import { Success } from "./pages/Success";
 
 const App: React.FC = () => {

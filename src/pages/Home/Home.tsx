@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heading, BasePageLayout, Button } from "../../components";
+import { Heading, BasePageLayout } from "../../components";
 
 import "./Home.styles.scss";
 

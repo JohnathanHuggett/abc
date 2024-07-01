@@ -1,0 +1,38 @@
+@import "../../../assets/scss/global.scss";
+
+.pay-step {
+  display: flex;
+  flex-direction: column;
+  padding: spacing(5x) spacing(8x);
+  border-bottom: 1px solid color(gray);
+
+  &-headline {
+    display: flex;
+    align-items: center;
+    column-gap: spacing(4x);
+    margin-bottom: spacing(5x);
+  }
+
+  &-indicator {
+    display: flex;
+    justify-content: center;
+
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    color: color(white);
+    background-color: color(primary);
+    @include applyTypography(bodyRegular, bold, body, small);
+  }
+
+  &-title {
+    margin-right: auto;
+    color: color(black);
+    @include applyTypography(bodyRegular, bold, body, small);
+  }
+
+  &-edit {
+    color: color(link);
+    @include applyTypography(bodyRegular, bold, body, small);
+  }
+}
