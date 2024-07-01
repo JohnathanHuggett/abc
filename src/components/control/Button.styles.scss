@@ -1,0 +1,17 @@
+@import "../../assets/scss/global.scss";
+
+.btn {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: spacing(3x) spacing(10x);
+  border-radius: spacing(3x);
+  color: color(white);
+  @include applyTypography(bodyRegular, bold, body, small);
+
+  &-primary {
+    background-color: color(primary);
+  }
+}

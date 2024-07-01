@@ -1,0 +1,48 @@
+@import "../../assets/scss/global.scss";
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  row-gap: spacing(4x);
+  margin-top: spacing(24x);
+  margin-bottom: spacing(11x);
+  padding: 0 spacing(4x);
+
+  &-description {
+    text-align: center;
+    @include applyTypography(bodyRegular, normal, body, small);
+  }
+}
+
+.cta-to-pay {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: color(white);
+  border-top-left-radius: spacing(8x);
+  border-top-right-radius: spacing(8x);
+  padding: spacing(8x) spacing(8x) 0;
+
+  &-cost {
+    display: flex;
+    flex-direction: column;
+    row-gap: spacing(6x);
+    width: 100%;
+  }
+
+  &-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-description {
+      color: color(fontLight);
+      @include applyTypography(bodyRegular, bold, body, small);
+    }
+  }
+
+  &-btn {
+  }
+}

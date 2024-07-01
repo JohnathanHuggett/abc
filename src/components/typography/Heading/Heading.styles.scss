@@ -1,0 +1,7 @@
+@import "../../../assets/scss/global.scss";
+
+.heading {
+  &-h1 {
+    @include applyTypography(heroLarge, bold, heading, null);
+  }
+}

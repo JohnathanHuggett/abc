@@ -1,4 +1,4 @@
-import { BasePageLayout } from "../components/layout";
+import { BasePageLayout } from "../components";
 
 export const Success: React.FC = () => {
   return (

@@ -1,2 +1,2 @@
-export { BasePageLayout } from "./BasePageLayout";
-export { Header } from "./Header";
+export * from "./BasePageLayout";
+export * from "./Header";

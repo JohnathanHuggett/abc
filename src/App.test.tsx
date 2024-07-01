@@ -4,7 +4,7 @@ import App from "./App";
 
 test("Renders home page", () => {
   render(<App />);
-  const H1 = screen.getByText("Home Page", { selector: "h1" });
+  const H1 = screen.getByText("Hi, Taylor", { selector: "h1" });
 
   expect(H1).toBeInTheDocument();
 });
